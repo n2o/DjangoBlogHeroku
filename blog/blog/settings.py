@@ -1,5 +1,5 @@
 """
-Django settings for first project.
+Django settings for blog project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -17,12 +17,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '2&6v9ub*9)_*rb!0h&w!%bfz27pucpg_7*6$1%f(0^i1l4fwf_'
+SECRET_KEY = 'pcn%yx8@#-sg!m&m#4&_t)!p9j&@da8pt@z8=dn++t3vr241y9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 TEMPLATE_DEBUG = True
+
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 ALLOWED_HOSTS = []
 
@@ -48,9 +50,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'first.urls'
+ROOT_URLCONF = 'blog.urls'
 
-WSGI_APPLICATION = 'first.wsgi.application'
+WSGI_APPLICATION = 'blog.wsgi.application'
 
 
 # Database
