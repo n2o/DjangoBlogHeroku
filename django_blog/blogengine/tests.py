@@ -60,3 +60,11 @@ class AdminTest(LiveServerTestCase):
         # Check response code
         response = self.client.get('/admin/')
         self.assertEquals(response.status_code, 200)
+
+    def test_create_post(self):
+        # Log in
+        self.client.login(username='bobsmith', password='password')
+
+        # Check response code
+        response = self.client.get('/admin/blogengine/post/add')
+        self.assertEquals(response.status_code, 200)
