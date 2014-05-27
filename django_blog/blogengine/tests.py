@@ -1,6 +1,13 @@
 from django.test import TestCase, LiveServerTestCase, Client
 from django.utils import timezone
+from django.contrib.flatpages.models import FlatPage
+from django.contrib.sites.models import Site
 from blogengine.models import Post
+
+class BaseAcceptanceTest(LiveServerTestCase):
+    def setUp(self):
+        self.client = Client()
+
 
 class PostTest(TestCase):
     def test_create_post(self):
@@ -26,11 +33,8 @@ class PostTest(TestCase):
         self.assertEquals(only_post.pub_date.second, post.pub_date.second)
 
 
-class AdminTest(LiveServerTestCase):
+class AdminTest(BaseAcceptanceTest):
     fixtures = ['users.json']
-
-    def setUp(self):
-        self.client = Client()
 
     def test_login(self):
         # Get login page
@@ -64,7 +68,3 @@ class AdminTest(LiveServerTestCase):
     def test_create_post(self):
         # Log in
         self.client.login(username='bobsmith', password='password')
-
-        # Check response code
-        response = self.client.get('/admin/blogengine/post/add')
-        self.assertEquals(response.status_code, 200)
