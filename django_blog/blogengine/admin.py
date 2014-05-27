@@ -1,5 +1,4 @@
 from django.contrib import admin
-from django.contrib.auth.models = admin
 from blogengine.models import Post
 
 class PostAdmin(admin.ModelAdmin):
