@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 
+from slugify import slugify
+
 class Tag(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
@@ -9,7 +11,7 @@ class Tag(models.Model):
 
     def save(self):
         if not self.slug:
-            self.slug = slugify(unicode(self.name))
+            self.slug = slugify(self.name)
         super(Tag, self).save()
 
     def get_absolute_url(self):
@@ -26,8 +28,7 @@ class Category(models.Model):
 
     def save(self):
         if not self.slug:
-            pass
-            # self.slug = slugify(unicode(self.name))
+            self.slug = slugify(self.name)
         super(Category, self).save()
 
     def get_absolute_url(self):

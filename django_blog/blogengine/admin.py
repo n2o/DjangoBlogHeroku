@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blogengine.models import Post, Category
+from blogengine.models import Post, Category, Tag
 
 class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
@@ -11,3 +11,4 @@ class PostAdmin(admin.ModelAdmin):
 
 admin.site.register(Category)
 admin.site.register(Post, PostAdmin)
+admin.site.register(Tag)
