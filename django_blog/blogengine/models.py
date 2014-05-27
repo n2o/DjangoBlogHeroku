@@ -5,6 +5,15 @@ from django.contrib.sites.models import Site
 class Category(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
+    slug = models.SlugField(max_length=40, unique=True, blank=True, null=True)
+
+    def save(self):
+        if not self.slug:
+            self.slug = slugify(unicode(self.name))
+        super(Category, self).save()
+
+    def get_absolute_url(self):
+        return "/category/%s/" % (self.slug)
 
     def __str__(self):
         return self.name
