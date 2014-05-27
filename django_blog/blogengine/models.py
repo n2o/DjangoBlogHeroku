@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 
-class Category(models.Model):
+class Tag(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
     slug = models.SlugField(max_length=40, unique=True, blank=True, null=True)
@@ -10,6 +10,24 @@ class Category(models.Model):
     def save(self):
         if not self.slug:
             self.slug = slugify(unicode(self.name))
+        super(Tag, self).save()
+
+    def get_absolute_url(self):
+        return "/tag/%s/" % (self.slug)
+
+    def __str__(self):
+        return self.name
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+    slug = models.SlugField(max_length=40, unique=True, blank=True, null=True)
+
+    def save(self):
+        if not self.slug:
+            pass
+            # self.slug = slugify(unicode(self.name))
         super(Category, self).save()
 
     def get_absolute_url(self):
@@ -30,6 +48,7 @@ class Post(models.Model):
     author = models.ForeignKey(User)
     site = models.ForeignKey(Site)
     category = models.ForeignKey(Category, blank=True, null=True)
+    tags = models.ManyToManyField(Tag)
 
     def get_absolute_url(self):
         return "/%s/%s/%s/" % (self.pub_date.year, self.pub_date.month, self.slug)
