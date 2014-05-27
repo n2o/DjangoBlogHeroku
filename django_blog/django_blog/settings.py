@@ -39,10 +39,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'south',
-    'blogengine',
     'django.contrib.sites',
     'django.contrib.flatpages',
+    'django.contrib.syndication',
+    'south',
+    'blogengine',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -4,12 +4,15 @@
 
     {% block content %}
         {% for post in object_list %}
-        <div class="post">
-            <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
-            <h3>{{ post.pub_date }}</h3>
-            {{ post.text }}
-        </div>
-        <a href="{{ post.category.get_absolute_url }}">{{ post.category.name }}</a>
+            <div class="post">
+                <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
+                <h3>{{ post.pub_date }}</h3>
+                {{ post.text }}
+            </div>
+            <a href="{{ post.category.get_absolute_url }}">{{ post.category.name }}</a>
+            {% for tag in posts.tag.all %}
+                <a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a>
+            {% endfor %}
         {% endfor %}
 
         {% if page_obj.has_previous %}
