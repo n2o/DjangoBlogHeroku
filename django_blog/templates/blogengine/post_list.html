@@ -8,7 +8,7 @@
                 <div class="post">
                     <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
                     <h3>{{ post.pub_date }}</h3>
-                    {{ post.text }}
+                    {{ post.text|custom_markdown }}
                 </div>
                 <a href="{{ post.category.get_absolute_url }}">{{ post.category.name }}</a>
                 {% for tag in posts.tag.all %}
