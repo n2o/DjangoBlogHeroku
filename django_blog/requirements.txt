@@ -13,7 +13,6 @@ gunicorn==18.0
 logilab-common==0.61.0
 markdown2==2.2.1
 psycopg2==2.5.3
-pygments-style-solarized==0.1.1
 pylint==1.2.1
 pystache==0.5.4
 python-slugify==0.0.7

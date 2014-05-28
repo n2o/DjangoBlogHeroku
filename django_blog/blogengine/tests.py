@@ -4,7 +4,7 @@ from blogengine.models import Post, Category
 from django.contrib.flatpages.models import FlatPage
 from django.contrib.sites.models import Site
 from django.contrib.auth.models import User
-import markdown
+import markdown2 as markdown
 
 # Create your tests here.
 class PostTest(TestCase):
