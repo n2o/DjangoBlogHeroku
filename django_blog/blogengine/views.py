@@ -10,7 +10,7 @@ class PostsFeed(Feed):
     description = "RSS feed - blog posts"
 
     def items(self):
-        return Post.objects.order_by('-pub-date')
+        return Post.objects.order_by('-pub_date')
 
     def item_title(self, item):
         return item.title
