@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<d:error xmlns:d="DAV:" xmlns:s="http://sabredav.org/ns">
+  <s:exception>Sabre_DAV_Exception_ServiceUnavailable</s:exception>
+  <s:message></s:message>
+  <s:sabredav-version>1.7.6</s:sabredav-version>
+</d:error>
+<?xml version="1.0" encoding="utf-8"?>
+<d:error xmlns:d="DAV:" xmlns:s="http://sabredav.org/ns">
+  <s:exception>Sabre_DAV_Exception_ServiceUnavailable</s:exception>
+  <s:message></s:message>
+  <s:sabredav-version>1.7.6</s:sabredav-version>
+</d:error>
+<?xml version="1.0" encoding="utf-8"?>
+<d:error xmlns:d="DAV:" xmlns:s="http://sabredav.org/ns">
+  <s:exception>Sabre_DAV_Exception_ServiceUnavailable</s:exception>
+  <s:message></s:message>
+  <s:sabredav-version>1.7.6</s:sabredav-version>
+</d:error>
+<?xml version="1.0" encoding="utf-8"?>
+<d:error xmlns:d="DAV:" xmlns:s="http://sabredav.org/ns">
+  <s:exception>Sabre_DAV_Exception_ServiceUnavailable</s:exception>
+  <s:message></s:message>
+  <s:sabredav-version>1.7.6</s:sabredav-version>
+</d:error>
