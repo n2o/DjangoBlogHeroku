@@ -89,11 +89,13 @@
             {% endblock %}
 
             <div class="slideshow">
+                {% block slideshow %}
                 <ul class="rslides" id="slider1">
                     <li><img src="{% static 'img/slideshow/1.jpg' %}" alt=""></li>
                     <li><img src="{% static 'img/slideshow/2.jpg' %}" alt=""></li>
                     <li><img src="{% static 'img/slideshow/3.jpg' %}" alt=""></li>
                 </ul>
+                {% endblock %}
             </div>
 
             <div class="row">

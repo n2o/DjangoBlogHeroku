@@ -3,6 +3,12 @@
     width: 90%;
 }
 
+/* Footer */
+.footer {
+    background: lightgrey;
+}
+
+/* Slideshow */
 .slideshow {
     width: 100%;
 }
@@ -11,6 +17,7 @@
     margin: 0 auto;
     width: 90%;
 }
+
 
 /* Code highlighting */
 div.codehilite pre {
